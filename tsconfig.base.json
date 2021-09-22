@@ -14,7 +14,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-sagacity/performance-benifit/ui-shared": [
+        "libs/performance-benifit/ui-shared/src/index.ts"
+      ],
+      "@nx-sagacity/performance-benifits/widget-app": [
+        "libs/performance-benifits/widget-app/src/index.ts"
+      ],
+      "@nx-sagacity/store/ui-shared": ["libs/store/ui-shared/src/index.ts"],
+      "@nx-sagacity/util-interface": ["libs/util-interface/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,42 @@
+
+
+
+
+<p style="font-weight: 600;"> {{title}} </p>
+
+<!-- <table *ngFor="let data of sourceData | async "> -->
+<table mat-table *ngFor="let data of sourceData | async ">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+         <!-- Name Column -->
+         <ng-container matColumnDef="name"  >
+          <th  *matHeaderCellDef> </th>
+          <td mat-cell ><p class="td-border" >{{data.name}}</p> </td>
+        </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="Due">
+    <th    mat-header-cell class="th-color1"  *matHeaderCellDef> Due </th>
+    <td mat-cell> {{data.Due}} </td>
+  </ng-container>
+
+
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="Actioned">
+    <th class="th-color2" mat-header-cell *matHeaderCellDef> Actioned </th>
+    <td mat-cell> {{data.Actioned}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="Outstanding">
+    <th class="th-color3"  mat-header-cell *matHeaderCellDef> Outstanding </th>
+    <td mat-cell > {{data.Outstanding}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
