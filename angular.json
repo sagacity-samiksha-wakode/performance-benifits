@@ -90,6 +90,10 @@
                         "main": "apps/performance-benifits/src/main.ts",
                         "polyfills": "apps/performance-benifits/src/polyfills.ts",
                         "tsConfig": "apps/performance-benifits/tsconfig.app.json",
+                        "allowedCommonJsDependencies": [
+                            "chart.js",
+                            "crypto-js"
+                        ],
                         "assets": [
                             "apps/performance-benifits/src/favicon.ico",
                             "apps/performance-benifits/src/assets"
