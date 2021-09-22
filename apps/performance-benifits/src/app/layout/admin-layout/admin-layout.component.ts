@@ -10,6 +10,7 @@ import { AppRepoService } from '../../services/app-repo.service';
 import { GLOBAL_PARAM_KEY } from '../../app-constants';
 import { HelperTextPopoverService } from '../../services/helper-text-popover.service';
 import { MASTER_DATA } from '../../constants/db.constants';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 @Component({

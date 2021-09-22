@@ -104,7 +104,7 @@ export class LoginComponent implements OnInit {
 
   getAndBindRememberMeData() {
 
-    // let decryptedRememberMeData = JSON.parse(
+    // let decryptedRememberMeData= JSON.parse(
     //   this._encryptDecryptService.decrypt(
     //     this._localStorageService.getObject(REMEMBER_ME_DATA)
     //   )
@@ -194,7 +194,8 @@ export class LoginComponent implements OnInit {
 
     this._sessionStorageService.setObject(SESSION_STORAGE_DATA_KEY.SESSION_TOKEN, response.token)
     this._sessionStorageService.setObject(SESSION_STORAGE_DATA_KEY.USER_NAME, this.loginForm.get("userId")?.value)
-    this._router.navigate(['/admin/permit-listing']);
+    // this._router.navigate(['/admin/permit-listing']);
+    this._router.navigate(['/admin/dashboard']);
 
   }
 

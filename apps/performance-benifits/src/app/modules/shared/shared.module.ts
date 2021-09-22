@@ -1,9 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { DialogModule } from 'primeng/dialog';
-import { MaterialModule } from 'src/app/materials/material.module';
-import { PlaceHolderComponent } from '../shared/place-holder/place-holder.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { DialogModule } from 'primeng/dialog';
+import { MaterialModule } from 'apps/performance-benifits/src/material/material.module';
+import { NgModule } from '@angular/core';
+import { PlaceHolderComponent } from '../shared/place-holder/place-holder.component';
+
+// import { MaterialModule } from '../../materials/material.module';
+// import { MaterialModule } from 'src/app/materials/material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +19,7 @@ import { DialogComponent } from './dialog/dialog.component';
     CommonModule,
     DialogModule,
     MaterialModule,
-    // SharedAppModule
+    SharedAppModule
   ],
   exports:[
     PlaceHolderComponent,

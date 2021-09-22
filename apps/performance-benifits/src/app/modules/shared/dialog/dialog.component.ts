@@ -1,5 +1,8 @@
-import { Component, Input, OnInit, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
-import { DialogModel } from 'src/app/modules/shared/dialog/dialog-model';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+
+import { DialogModel } from './dialog-model';
+
+// import { DialogModel } from 'src/app/modules/shared/dialog/dialog-model';
 
 @Component({
   selector: 'app-dialog',
@@ -7,9 +10,9 @@ import { DialogModel } from 'src/app/modules/shared/dialog/dialog-model';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
-  @Input() dialogModel: DialogModel
+  @Input() dialogModel?: DialogModel
   @Output() onDialogClose = new EventEmitter<boolean>();
-  @ViewChild('dialogRef', { read: ElementRef }) public dialogRef: ElementRef<any>;
+  @ViewChild('dialogRef', { read: ElementRef }) public dialogRef?: ElementRef<any>;
 
   constructor() { }
 
@@ -18,10 +21,10 @@ export class DialogComponent implements OnInit {
 
   closeDialog() {
     this.onDialogClose.emit(true);
-    this.dialogModel.visible = false;
+    this.dialogModel!.visible = false;
   }
 
   scrollTop(){
-    this.dialogRef.nativeElement.querySelector(".p-dialog-content").scrollTop = 0;
+    this.dialogRef!.nativeElement.querySelector(".p-dialog-content").scrollTop = 0;
   }
 }

@@ -8,6 +8,11 @@ import { MaterialModule } from '../../materials/material.module';
 import { NgModule } from '@angular/core';
 import { PageLayoutRoutingModule } from './page-layout-routing.module';
 import { TransformCurrencyPipeModule } from '../../pipe/transform-currency/transform-currency.pipe';
+import { ValidateTokenComponent } from './validate-token/validate-token.component';
+
+// import { SharedAppModule } from '../shared/shared.module';
+
+
 
 // import { WidgetAppModule } from '../widget-app/widget-app.module';
 
@@ -15,7 +20,7 @@ import { TransformCurrencyPipeModule } from '../../pipe/transform-currency/trans
 // import { PermitListingComponent } from './permit-listing/permit-listing.component';
 // import { PermitViewComponent } from './permit-view/permit-view.component';
 // import { UserManagementComponent } from './user-management/user-management.component';
-// import { SharedAppModule } from '../shared/shared.module';
+
 
 // import { NgxMatNativeDateModule, NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 
@@ -23,7 +28,7 @@ import { TransformCurrencyPipeModule } from '../../pipe/transform-currency/trans
 // import { PermitManagerJeopardyComponent } from './permit-manager-jeopardy/permit-manager-jeopardy.component';
 // import { ManagementDashboardComponent } from './management-dashboard/management-dashboard.component';
 
-// import { ValidateTokenComponent } from './validate-token/validate-token.component';
+
 // import { PermitListingPmtMgrComponent } from './permit-manager/permit-listing-pmt-mgr/permit-listing-pmt-mgr.component';
 // import { PermitViewPmtMgrComponent } from './permit-manager/permit-view-pmt-mgr/permit-view-pmt-mgr.component';
 
@@ -35,13 +40,13 @@ import { TransformCurrencyPipeModule } from '../../pipe/transform-currency/trans
     // UserManagementComponent,
     // ManagementDashboardComponent,
     // PermitManagerJeopardyComponent,
-    // ValidateTokenComponent,
+    ValidateTokenComponent,
     // PermitListingPmtMgrComponent,
     // PermitViewPmtMgrComponent
   ],
   imports: [
     CommonModule,
-    // PageLayoutRoutingModule,
+    PageLayoutRoutingModule,
     // WidgetAppModule,
     // WidgetModule,
     // DialogModule,

@@ -21,9 +21,12 @@ import { OptionalSelectDirectiveModule } from './directive/optional-select/optio
 import { ServerApiInterfaceServiceService } from './services/server-api-interface-service.service';
 import { ToastrModule } from 'ngx-toastr';
 
+// import { PerformanceBenifitsWidgetAppModule } from '@nx-sagacity/performance-benifits/widget-app';
+
+
+
+// import {PerformanceBenifitsWidgetAppModule} from '@performance-benifits/performance-benifits/widget-app';
 // import { SharedAppModule } from './modules/shared/shared.module';
-
-
 
 
 // import { WidgetAppModule } from './modules/widget-app/widget-app.module';
@@ -36,6 +39,7 @@ import { ToastrModule } from 'ngx-toastr';
     AdminLayoutComponent
   ],
   imports: [
+    // PerformanceBenifitsWidgetAppModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -44,6 +48,8 @@ import { ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
+      // PerformanceBenifitsWidgetAppModule,
+    // PerformanceBenifitsWidgetAppModule,
     // WidgetAppModule,
     // WidgetModule,
     ToastrModule.forRoot({
@@ -54,6 +60,7 @@ import { ToastrModule } from 'ngx-toastr';
     // SharedAppModule,
     OptionalSelectDirectiveModule,
     HelperTextPopoverDirectiveModule,
+
   ],
   providers: [
     ServerApiInterfaceServiceService,
