@@ -9,12 +9,13 @@ import { NgModule } from '@angular/core';
 import { PageLayoutRoutingModule } from './page-layout-routing.module';
 import { TransformCurrencyPipeModule } from '../../pipe/transform-currency/transform-currency.pipe';
 import { ValidateTokenComponent } from './validate-token/validate-token.component';
+import { WidgetAppModule } from '../widget-app/widget-app.module';
 
 // import { SharedAppModule } from '../shared/shared.module';
 
 
 
-// import { WidgetAppModule } from '../widget-app/widget-app.module';
+
 
 
 // import { PermitListingComponent } from './permit-listing/permit-listing.component';
@@ -47,16 +48,16 @@ import { ValidateTokenComponent } from './validate-token/validate-token.componen
   imports: [
     CommonModule,
     PageLayoutRoutingModule,
-    // WidgetAppModule,
+    WidgetAppModule,
     // WidgetModule,
     // DialogModule,
     MaterialModule,
     // SharedAppModule,
-    TransformCurrencyPipeModule,
+    // TransformCurrencyPipeModule,
     // NgxMatDatetimePickerModule,
     // NgxMatTimepickerModule,
     // NgxMatNativeDateModule,
-    HelperTextPopoverDirectiveModule
+    // HelperTextPopoverDirectiveModule
   ]
 })
 export class PageLayoutModule { }

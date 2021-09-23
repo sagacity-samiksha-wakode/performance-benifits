@@ -46,6 +46,9 @@
       "tags": [],
       "implicitDependencies": ["performance-benifits"]
     },
+    "performance-benifits-shared-app": {
+      "tags": []
+    },
     "performance-benifits-widget-app": {
       "tags": []
     },

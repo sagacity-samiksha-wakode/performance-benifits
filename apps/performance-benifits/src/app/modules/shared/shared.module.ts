@@ -19,7 +19,7 @@ import { PlaceHolderComponent } from '../shared/place-holder/place-holder.compon
     CommonModule,
     DialogModule,
     MaterialModule,
-    SharedAppModule
+    // SharedAppModule
   ],
   exports:[
     PlaceHolderComponent,

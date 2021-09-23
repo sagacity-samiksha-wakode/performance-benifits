@@ -26,6 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -58,6 +59,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonToggleModule,
     ReactiveFormsModule,
     FormsModule,
+    MatToolbarModule,
+
     MatStepperModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -74,6 +77,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatInputModule,
     MatTooltipModule,
+    MatToolbarModule,
     MatAutocompleteModule,
     MatDialogModule,
     MatBadgeModule,

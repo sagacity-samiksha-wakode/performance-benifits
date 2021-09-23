@@ -18,6 +18,9 @@
       "@nx-sagacity/performance-benifit/ui-shared": [
         "libs/performance-benifit/ui-shared/src/index.ts"
       ],
+      "@nx-sagacity/performance-benifits/shared-app": [
+        "libs/performance-benifits/shared-app/src/index.ts"
+      ],
       "@nx-sagacity/performance-benifits/widget-app": [
         "libs/performance-benifits/widget-app/src/index.ts"
       ],

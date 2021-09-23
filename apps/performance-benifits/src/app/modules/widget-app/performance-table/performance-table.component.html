@@ -1,0 +1,19 @@
+<!-- <p style="font-weight: 600;"> {{title}} </p> -->
+
+
+
+<table >
+  <tr>
+    <th> </th>
+    <th class="th-color1">Due</th>
+    <th  class="th-color2">Actioned</th>
+    <th  class="th-color3">Outstanding</th>
+  </tr>
+  <tr *ngFor ="let data of dataModel?.data">
+
+    <td class="td-border">{{data.name}}</td>
+    <td>{{data.Due}}</td>
+    <td>{{data.Actioned}}</td>
+    <td>{{data.Outstanding}}</td>
+  </tr>
+</table>

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { PRODUCT_SERVICES } from './constants/app-repo.constants';
-import { DialogModel } from './modules/shared/dialog/dialog-model';
 import { AppRepoService } from './services/app-repo.service';
+import { Component } from '@angular/core';
+import { DialogModel } from './modules/shared/dialog/dialog-model';
 import { ErrorDialogService } from './services/error.dialog.service';
+import { PRODUCT_SERVICES } from './constants/app-repo.constants';
+import { Router } from '@angular/router';
 import { ScriptService } from './services/script.service';
 import { ThemeService } from './theme/theme.service';
 import { theme } from './theme/all-theme/default-theme';
-
 
 @Component({
   selector: 'app-root',
@@ -21,6 +21,8 @@ export class AppComponent {
     public _errorDialogService: ErrorDialogService,
     private _themeService: ThemeService,
     public _appRepoService: AppRepoService,
+    private _router: Router,
+
   ) {
 
     _scriptService.LoadScriptFromURL(`https://portal-gb.one.network/prd-portal-one-network/embed/loader.js`)
@@ -40,6 +42,8 @@ export class AppComponent {
   ngOnInit() {
     this.setAppTheme();
     this.setAppProductCode();
+    this._router.navigate(['/dashboard']);
+
   }
 
   setAppTheme() {

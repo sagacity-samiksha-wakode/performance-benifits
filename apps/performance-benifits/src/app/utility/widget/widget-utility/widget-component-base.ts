@@ -1,29 +1,31 @@
-import { FormGroup, FormBuilder, NgForm } from '@angular/forms';
-import { DatePipe } from '@angular/common';
 import { ElementRef, ViewChild } from '@angular/core';
-import { ServerApiInterfaceServiceService } from 'src/app/services/server-api-interface-service.service';
-import { FormModeConstant, WidgetConstants } from 'src/app/constants/widget-constants';
-import { ValidationService } from 'src/app/services/validation.service';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { FormModeConstant, WidgetConstants } from '../../../constants/widget-constants';
+
+import { DatePipe } from '@angular/common';
+import { ServerApiInterfaceServiceService } from '../../../services/server-api-interface-service.service';
+import { ValidationService } from '../../../services/validation.service';
+
 declare var $: any;
 
 export abstract class WidgetComponentBase {
-  wgFormGroup: FormGroup;
+  wgFormGroup?: FormGroup;
   dataModel: any;
   configModel: any;
-  isSubmitted: boolean;
+  isSubmitted?: boolean;
   wgFormData: any;
-  id: string;
-  apiDataUrl: string;
-  globalParameters: Map<string, any>;
-  fieldApiCount: number;
+  id?: string;
+  apiDataUrl?: string;
+  globalParameters?: Map<string, any>;
+  fieldApiCount?: number;
   tempPermission: any = true;
   formComponent: any;
 
-  abstract setFieldData();
-  abstract getControlData();
-  abstract convertData(response: any);
-  abstract setMode(responseDataModel: any);
-  abstract setValue(responseDataModel: any);
+  abstract setFieldData():any;
+  abstract getControlData():any;
+  abstract convertData(response: any):any;
+  abstract setMode(responseDataModel: any):any;
+  abstract setValue(responseDataModel: any):any;
 
   constructor(private _baseServerApiBase: ServerApiInterfaceServiceService,
     private _baseValidationServiceBase: ValidationService) {
@@ -70,7 +72,7 @@ export abstract class WidgetComponentBase {
     if (this.formComponent) {
       this.formComponent.onSubmit(null);
     }
-    return this.wgFormGroup.valid;
+    return this.wgFormGroup!.valid;
   }
 
   wgSetModeFromGlobalParameter() {
@@ -121,7 +123,7 @@ export abstract class WidgetComponentBase {
     })
   }
 
-  wgAPIMethodPut(apiDataUrl, requestData) {
+  wgAPIMethodPut(apiDataUrl:any, requestData:any) {
     this.wgOnRequest();
     return new Promise((resolve, reject) => {
       this._baseServerApiBase.put<any, any>(apiDataUrl, requestData).subscribe(
@@ -141,7 +143,7 @@ export abstract class WidgetComponentBase {
     })
   }
 
-  wgAPIMethodPost(apiDataUrl, requestData) {
+  wgAPIMethodPost(apiDataUrl:any, requestData:any) {
     this.wgOnRequest();
     return new Promise((resolve, reject) => {
       this._baseServerApiBase.post<any, any>(apiDataUrl, requestData).subscribe(
@@ -161,7 +163,7 @@ export abstract class WidgetComponentBase {
     })
   }
 
-  wgAPIMethodDelete(apiDataUrl, requestData) {
+  wgAPIMethodDelete(apiDataUrl:any, requestData:any) {
     this.wgOnRequest();
     return new Promise((resolve, reject) => {
       this._baseServerApiBase.delete<any, any>(apiDataUrl, requestData).subscribe(
@@ -186,7 +188,7 @@ export abstract class WidgetComponentBase {
     return Promise.all([isResolved])
   }
 
-  get wgFC() { return this.wgFormGroup.controls; }
+  get wgFC() { return this.wgFormGroup!.controls; }
 
   get fg() { return this.wgFormGroup; }
 
@@ -215,10 +217,10 @@ export abstract class WidgetComponentBase {
       this.formComponent.resetForm();
     }
     this.isSubmitted = false;
-    this.wgFormGroup.reset();
+    this.wgFormGroup!.reset();
   }
 
-  emitEvent(actionName, data?: any) {
+  emitEvent(actionName:any, data?: any) {
     let eventDataObj = Object();
     eventDataObj.dataContext = data;
 
@@ -227,8 +229,8 @@ export abstract class WidgetComponentBase {
     }
   }
 
-  wgGetControlValue(formFieldNAme, defaultValue = null) {
-    const value = this.wgFormGroup.controls[formFieldNAme].value;
+  wgGetControlValue(formFieldNAme:any, defaultValue = null) {
+    const value = this.wgFormGroup?.controls[formFieldNAme].value;
     return value ? value : defaultValue;
   }
 

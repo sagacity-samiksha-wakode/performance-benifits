@@ -13,7 +13,11 @@ import { ValidateTokenComponent } from './modules/page-layout/validate-token/val
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  // { path: '', component: LoginComponent },
+  { path: '',
+  loadChildren: () => import ("./modules/page-layout/page-layout.module").then(m => m.PageLayoutModule) ,
+
+},
   { path: 'token/:token', component: ValidateTokenComponent },
   { path: 'login', component: LoginComponent },
   {

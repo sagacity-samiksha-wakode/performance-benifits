@@ -1,6 +1,9 @@
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+
 import { Injectable } from '@angular/core';
-import { AbstractControl, Validators, FormGroup, FormBuilder, FormControl, ValidationErrors, ValidatorFn } from '@angular/forms';
-import { ValidationModel } from 'src/app/models/common/validators.model';
+import { ValidationModel } from '../models/common/validators.model';
+
+// import { ValidationModel } from 'src/app/models/common/validators.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +12,11 @@ export class ValidationService {
   constructor(
     private formBuilder: FormBuilder
   ) { }
-  createFormGroup(formData) {
+  createFormGroup(formData:any) {
 
     const group = this.formBuilder.group({}, { validator: this.bindValidations(formData.groupValidations) });
     if (formData && formData.controls) {
-      formData.controls.forEach(formControl => {
+      formData.controls.forEach((formControl:any) => {
 
         if (formControl.controlType == "formarray") {
           let control = null;
@@ -27,7 +30,7 @@ export class ValidationService {
         } else {
 
 
-          let validation: ValidatorFn = null;
+          let validation: ValidatorFn|null = null;
           validation = this.bindValidations(formControl.validations || [])
           const control: FormControl = this.formBuilder.control(
             formControl.value,
@@ -81,8 +84,8 @@ export class ValidationService {
   bindValidations(validations: any) {
 
     if (validations && validations.length > 0) {
-      const validList = [];
-      validations.forEach(validation => {
+      const validList:any = [];
+      validations.forEach((validation:any) => {
         let validator;
         validator = this.getValidator(validation);
         validList.push(validator);
@@ -176,7 +179,7 @@ export class ValidationService {
       const validationErrors: ValidationErrors = validator(control);
       if (validationErrors) {
         let errorMessage = ValidationService.getErrorMessage(validation, control, validationErrors);
-        let errorData = {};
+        let errorData:any = {};
         errorData[validation.name] = {
           validationErrors,
           errorMessage: errorMessage
@@ -187,7 +190,7 @@ export class ValidationService {
     };
   }
 
-  static emailValidator(control) {
+  static emailValidator(control:any) {
     // RFC 2822 compliant regex
     if (control.value.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)) {
       return null;
@@ -196,7 +199,7 @@ export class ValidationService {
     }
   }
 
-  static passwordValidator(control) {
+  static passwordValidator(control:any) {
     // {6,100}           - Assert password is between 6 and 100 characters
     // (?=.*[0-9])       - Assert a string has at least one number
     if (control.value.match(/^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{6,100}$/)) {
@@ -225,12 +228,12 @@ export class ValidationService {
     }
   }
 
-  getValidations(controlName, validationData) {
-    return validationData.find(v => v.controlName === controlName).validations;
+  getValidations(controlName:any, validationData:any) {
+    return validationData.find((v:any) => v.controlName === controlName).validations;
   }
 
   getValidationsFromArray(formarrayName: string, controlName: string, validationData: any[]) {
-    return validationData.find(v => v.controlName === formarrayName).controls.find(c => c.controlName == controlName).validations;
+    return validationData.find(v => v.controlName === formarrayName).controls.find((c:any) => c.controlName == controlName).validations;
   }
 
   static getErrorMessage(validation: ValidationModel, control: AbstractControl, validationErrors: ValidationErrors, formFroup?: FormGroup) {

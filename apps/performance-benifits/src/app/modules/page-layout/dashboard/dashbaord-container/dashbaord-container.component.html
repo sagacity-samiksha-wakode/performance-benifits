@@ -1,2 +1,114 @@
-<p>dashbaord-container works!</p>
+<div class="container-fluid">
+    <p class="row" style="background-color: #ffff;">
 
+        <mat-toolbar class="col" color="defoult">
+            <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button> --><img src="assets/images/opuslogo.png" alt="Logo" style="width: 100px;height: 20px;">
+            <span class="material-icons icon-border">
+    home
+    </span>
+            <span class="class-permitmaneger">Permit Manager</span>
+            <span class="example-spacer"></span>
+            <span style="color: #3E6FB6;margin-left: 10px;font-size: 12px;">ABC Corporation</span>
+            <span class="material-icons icon-border">
+  notifications
+  </span>
+            <mat-card style="margin-left: 10px;">
+                <div class="row">
+                    <div class="col-3">
+                        <span class="material-icons material-icon-border">
+        VN
+            </span>
+
+                    </div>
+                    <div class="col-9">
+                        <span style="font-size: 12px;">
+  S Patil
+</span>
+                        <span style="font-size: 10px;"> ETC</span>
+                    </div>
+                </div>
+
+            </mat-card>
+
+        </mat-toolbar>
+
+        <mat-tab-group class="row" animationDuration="0ms">
+            <mat-tab label="Performance at a Glance"></mat-tab>
+
+        </mat-tab-group>
+
+
+    </p>
+
+    <div class="row">
+        <div class="col-10">
+            <div class="row">
+                <div class="col-8">
+                    <mat-card class="mt-1">
+                        <div class="row">
+                            <div class="text-center headingtitle">
+                                Permits
+                            </div>
+
+                            <div class="col-sm-6 testdiv ">
+                                <app-performance-table></app-performance-table>
+                                <!-- <h5>hello</h5> -->
+                                <!-- <app-profile [dataModel]="profileDataModel" [configModel]="profileConfigModel ">
+    </app-profile> -->
+
+                            </div>
+                            <div class="col-sm-6 mt-1">
+                                <div>
+                                    <app-performance-table2></app-performance-table2>
+                                </div><br>
+                                <div>
+                                    <app-performance-table2></app-performance-table2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+
+                <div class="col-sm-4 flex-column felx-row">
+
+                    <div class="col-12 ">
+                        <!-- <mat-card>
+                            <div class="row ">
+                                <app-performance-chart></app-performance-chart>
+                            </div>
+                        </mat-card> -->
+                    </div>
+                    <div class="col-12">
+                        <!-- <mat-card>
+                            <div class="row ">
+                                <div class="text-center headingtitle">
+                                    Public Imapact Of Works
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <app-performace-card1 [dataModel]="performanceCard1DataModel5" [configModel]="performanceCard1ConfigModel5">
+                                    </app-performace-card1>
+                                    </div>
+                                    <div class="col-4">
+                                        <app-performace-card1 [dataModel]="performanceCard1DataModel6" [configModel]="performanceCard1ConfigModel6">
+                                  </app-performace-card1>
+                                    </div>
+                                    <div class="col-4">
+                                        <app-performace-card1 [dataModel]="performanceCard1DataModel7" [configModel]="performanceCard1ConfigModel7">
+                                </app-performace-card1>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+
+</div>

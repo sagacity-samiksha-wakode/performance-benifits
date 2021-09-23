@@ -18,10 +18,19 @@ import { NgModule } from '@angular/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NotificationService } from './services/notification.service';
 import { OptionalSelectDirectiveModule } from './directive/optional-select/optional-select.directive';
+// import {PerformanceBenifitsSharedAppModule} from '@nx-sagacity/performance-benifits/shared-app';
 import { ServerApiInterfaceServiceService } from './services/server-api-interface-service.service';
 import { ToastrModule } from 'ngx-toastr';
+import { WidgetAppModule } from './modules/widget-app/widget-app.module';
 
 // import { PerformanceBenifitsWidgetAppModule } from '@nx-sagacity/performance-benifits/widget-app';
+
+
+
+
+// import { WidgetModule } from './modules/widget/widget.module';
+
+
 
 
 
@@ -29,8 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
 // import { SharedAppModule } from './modules/shared/shared.module';
 
 
-// import { WidgetAppModule } from './modules/widget-app/widget-app.module';
-// import { WidgetModule } from './modules/widget/widget.module';
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +48,6 @@ import { ToastrModule } from 'ngx-toastr';
     AdminLayoutComponent
   ],
   imports: [
-    // PerformanceBenifitsWidgetAppModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -50,7 +58,9 @@ import { ToastrModule } from 'ngx-toastr';
     NgxSpinnerModule,
       // PerformanceBenifitsWidgetAppModule,
     // PerformanceBenifitsWidgetAppModule,
-    // WidgetAppModule,
+    WidgetAppModule,
+    // PerformanceBenifitsWidgetAppModule,
+    // PerformanceBenifitsSharedAppModule,
     // WidgetModule,
     ToastrModule.forRoot({
       timeOut: 3000,
